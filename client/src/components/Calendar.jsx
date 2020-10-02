@@ -1,6 +1,7 @@
 import React from 'react';
 import { useRecoilValue } from 'recoil';
 import useSWR from 'swr';
+import format from 'date-fns/format';
 
 import { Stack, Grid } from '@chakra-ui/core';
 
@@ -11,7 +12,8 @@ import { daysInMonth, fetcher } from '../utils';
 export default function Calendar(props) {
   const month = useRecoilValue(currentMonth);
   const weeks = daysInMonth(month);
-  const { data } = useSWR('/api/activities?month=' + month.getTime(), fetcher, {
+  const date = format(month, 'yyyy-MM-dd');
+  const { data } = useSWR('/api/activities?month=' + date, fetcher, {
     initialData: {},
     revalidateOnMount: true,
   });

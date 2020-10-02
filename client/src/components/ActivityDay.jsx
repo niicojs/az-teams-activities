@@ -1,6 +1,5 @@
-import React from 'react'
+import React from 'react';
 import format from 'date-fns/format';
-import { fr } from 'date-fns/locale';
 
 import {
   Text,
@@ -23,6 +22,7 @@ export default function ActivityDay({ day, activities }) {
   const save = () => {
     setOpen(false);
   };
+  const strday = format(day.date, 'yyyy-MM-dd');
   return (
     <Popover
       isOpen={open}
@@ -36,11 +36,11 @@ export default function ActivityDay({ day, activities }) {
           bg={day.open ? 'blue.600' : 'gray.600'}
           justifyContent="center"
           alignItems="center"
-          key={'d' + day.date.getTime()}
+          key={strday}
         >
           <Text color="white">
-            {format(day.date, 'dd', { locale: fr })}
-            {activities[day.date.getTime()] ? '✔️' : null}
+            {format(day.date, 'dd')}
+            {activities[strday] ? '✔️' : null}
           </Text>
         </Flex>
       </PopoverTrigger>
