@@ -12,7 +12,7 @@ import { daysInMonth, fetcher } from '../utils';
 export default function Calendar(props) {
   const month = useRecoilValue(currentMonth);
   const weeks = daysInMonth(month);
-  const { data } = useSWR('/api/activities/' + month.getTime(), fetcher, {
+  const { data } = useSWR('/api/activities?month=' + month.getTime(), fetcher, {
     initialData: {},
     revalidateOnMount: true,
   });

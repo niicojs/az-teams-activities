@@ -2,11 +2,11 @@ const { daysInMonth } = require('./utils');
 
 module.exports = async function (context, req) {
   console.log(req);
-  const time = req.params.time;
+  const month = req.query.month;
 
-  console.log(`Get data for ${time}`);
+  console.log(`Get data for ${month}`);
 
-  const weeks = daysInMonth(new Date(+time));
+  const weeks = daysInMonth(new Date(+month));
   const days = {};
 
   for (const week of weeks) {
