@@ -1,0 +1,39 @@
+{
+  "name": "az-cra-activities",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@chakra-ui/core": "^0.8.0",
+    "@emotion/core": "^10.0.35",
+    "@emotion/styled": "^10.0.27",
+    "@microsoft/teams-js": "^1.7.0",
+    "date-fns": "^2.16.1",
+    "emotion-theming": "^10.0.27",
+    "ky": "^0.24.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.3",
+    "recoil": "0.0.13",
+    "swr": "^0.3.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build"
+  },
+  "prettier": {
+    "singleQuote": true
+  },
+  "proxy": "http://localhost:7071",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
