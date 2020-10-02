@@ -1,0 +1,15 @@
+{
+  "name": "activities-api",
+  "version": "",
+  "description": "",
+  "prettier": {
+    "singleQuote": true
+  },
+  "scripts": {
+    "start": "func start"
+  },
+  "author": "",
+  "dependencies": {
+    "date-fns": "^2.16.1"
+  }
+}

@@ -5,7 +5,6 @@ import useSWR from 'swr';
 import { Stack, Grid } from '@chakra-ui/core';
 
 import ActivityDay from './ActivityDay';
-
 import { currentMonth } from '../state';
 import { daysInMonth, fetcher } from '../utils';
 
