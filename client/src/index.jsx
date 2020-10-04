@@ -9,8 +9,9 @@ import * as teams from '@microsoft/teams-js';
 import App from './App';
 
 try {
-  teams.initialize();
+  teams.initialize(() => console.log('Teams OK'));
 } catch (e) {
+  console.log('Error initializing Teams SDK');
   console.log(e);
 }
 

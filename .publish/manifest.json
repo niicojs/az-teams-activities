@@ -1,0 +1,42 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.7/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.7",
+  "version": "{version}",
+  "id": "100d107b-3ab2-432b-9326-e2649a58a161",
+  "packageName": "com.niico.ai3.activities",
+  "developer": {
+    "name": "nico",
+    "websiteUrl": "{baseUrl0}/niicojs",
+    "privacyUrl": "{baseUrl0}/niicojs",
+    "termsOfUseUrl": "{baseUrl0}/niicojs",
+    "mpnId": "2211988"
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "name": {
+    "short": "{appname}",
+    "full": "{fullappname}"
+  },
+  "description": {
+    "short": "Suivi d'activites",
+    "full": "Suivi d'activites"
+  },
+  "accentColor": "#FFFFFF",
+  "staticTabs": [
+    {
+      "entityId": "my-activities",
+      "name": "Activities",
+      "contentUrl": "{baseUrl1}",
+      "websiteUrl": "{baseUrl1}",
+      "scopes": ["personal"]
+    }
+  ],
+  "permissions": ["identity", "messageTeamMembers"],
+  "validDomains": [],
+  "webApplicationInfo": {
+    "id": "{azureAppId}",
+    "resource": "{resource}"
+  }
+}

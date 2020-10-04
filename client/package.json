@@ -10,6 +10,7 @@
     "date-fns": "^2.16.1",
     "emotion-theming": "^10.0.27",
     "ky": "^0.24.0",
+    "msal": "^1.4.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3",

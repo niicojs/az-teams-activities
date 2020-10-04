@@ -1,0 +1,12 @@
+dependencies:
+  adm-zip: 0.4.16
+lockfileVersion: 5.1
+packages:
+  /adm-zip/0.4.16:
+    dev: false
+    engines:
+      node: '>=0.3.0'
+    resolution:
+      integrity: sha512-TFi4HBKSGfIKsK5YCkKaaFG2m4PEDyViZmEwof3MTIgzimHLto6muaHVpbrljdIvIrFZzEq/p4nafOeLcYegrg==
+specifiers:
+  adm-zip: ^0.4.16

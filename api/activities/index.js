@@ -2,9 +2,7 @@ const format = require('date-fns/format');
 const { daysInMonth } = require('./utils');
 
 module.exports = async function (context, req) {
-  console.log(req);
   const month = req.query.month;
-
   console.log(`Get data for ${month}`);
 
   const weeks = daysInMonth(new Date(month));
