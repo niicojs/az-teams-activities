@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import format from 'date-fns/format';
+import { mutate } from 'swr';
 
 import {
   Text,
@@ -15,14 +16,24 @@ import {
   RadioGroup,
   Radio,
 } from '@chakra-ui/core';
-import { useState } from 'react';
+import ky from 'ky';
 
-export default function ActivityDay({ day, activities }) {
+export default function ActivityDay({ day, month, activities }) {
   const [open, setOpen] = useState(false);
-  const save = () => {
-    setOpen(false);
-  };
+  const url = '/api/activities?month=' + month;
   const strday = format(day.date, 'yyyy-MM-dd');
+  const onSelect = (activity) => {
+    setTimeout(() => setOpen(false), 400);
+    mutate(url, () =>
+      ky.post(url, {
+        json: {
+          month,
+          day: strday,
+          activity,
+        },
+      })
+    );
+  };
   return (
     <Popover
       isOpen={open}
@@ -54,14 +65,21 @@ export default function ActivityDay({ day, activities }) {
         <PopoverArrow />
         <PopoverCloseButton />
         <PopoverBody>
-          <RadioGroup>
+          <RadioGroup onChange={(e) => onSelect(e.target.value)}>
             <Radio value="off">Congés</Radio>
             <Radio value="truc">Truc</Radio>
             <Radio value="bidule">Bidule</Radio>
           </RadioGroup>
-          <Button mt="1rem" variantColor="blue" onClick={save}>
-            Sauvegarder
-          </Button>
+          {activities[strday] ? (
+            <Button
+              leftIcon="delete"
+              mt="1rem"
+              variantColor="blue"
+              onClick={() => onSelect(null)}
+            >
+              Supprimer
+            </Button>
+          ) : null}
         </PopoverBody>
       </PopoverContent>
     </Popover>

@@ -29,6 +29,7 @@ export default function Calendar(props) {
             {week.map((day) => (
               <ActivityDay
                 key={day.date.getTime()}
+                month={date}
                 day={day}
                 activities={data}
               />
