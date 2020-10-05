@@ -4,7 +4,7 @@
   "appname": "Activities",
   "fullappname": "Activities",
   "website": "https://www.github.com",
-  "appHostName": "6ef30a0739ae.eu.ngrok.io",
+  "appHostName": "072de3e093bb.eu.ngrok.io",
   "azureAppId": "1b7917c4-d772-4340-85a8-0f66a1b08030",
   "resource": "api://{appHostName}/{azureAppId}"
 }

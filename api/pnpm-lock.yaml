@@ -1,6 +1,5 @@
 dependencies:
   '@azure/cosmos': 3.9.2
-  date-fns: 2.16.1
 lockfileVersion: 5.1
 packages:
   /@azure/cosmos/3.9.2:
@@ -23,12 +22,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-Q1y515GcOdTHgagaVFhHnIFQ38ygs/kmxdNpvpou+raI9UO3YZcHDngBSYKQklcKlvA7iuQlmIKbzvmxcOE9CQ==
-  /date-fns/2.16.1:
-    dev: false
-    engines:
-      node: '>=0.11'
-    resolution:
-      integrity: sha512-sAJVKx/FqrLYHAQeN7VpJrPhagZc9R4ImZIWYRFZaaohR3KzmuK88touwsSwSVT8Qcbd4zoDsnGfX4GFB4imyQ==
   /debug/4.2.0:
     dependencies:
       ms: 2.1.2
@@ -89,4 +82,3 @@ packages:
       integrity: sha512-FOmRr+FmWEIG8uhZv6C2bTgEVXsHk08kE7mPlrBbEe+c3r9pjceVPgupIfNIhc4yx55H69OXANrUaSuu9eInKg==
 specifiers:
   '@azure/cosmos': ^3.9.2
-  date-fns: ^2.16.1

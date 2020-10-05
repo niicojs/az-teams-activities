@@ -1,36 +1,29 @@
-const format = require('date-fns/format');
-const { daysInMonth } = require('./utils');
+const {
+  saveActivityToStorage,
+  getMonthActivitiesFromStorage,
+  removeActivityToStorage,
+} = require('./storage');
 
 const getActivities = async (context, req) => {
   const month = req.query.month;
   console.log(`Get data for ${month}`);
 
-  const weeks = daysInMonth(new Date(month));
-
-  const days = {};
-  for (const week of weeks) {
-    for (const day of week) {
-      if (day.open) {
-        if (Math.random() > 0.5) {
-          days[format(day.date, 'yyyy-MM-dd')] = 1;
-        }
-      }
-    }
-  }
-
+  const records = await getMonthActivitiesFromStorage(month);
   context.res = {
-    body: days,
+    body: records,
   };
 };
 
 const setActivity = async (context, req) => {
+  const month = req.query.month;
   const day = req.body.day;
-  console.log(`Set activity for ${day}`);
   const activity = req.body.activity;
   if (activity) {
-    // set
+    console.log(`Set activity for ${day}: ${activity}`);
+    await saveActivityToStorage(month, day, activity);
   } else {
-    // delete
+    console.log(`Remove activity for ${day}`);
+    await removeActivityToStorage(month, day);
   }
 
   return getActivities(context, req);

@@ -13,10 +13,7 @@ export default function Calendar(props) {
   const month = useRecoilValue(currentMonth);
   const weeks = daysInMonth(month);
   const date = format(month, 'yyyy-MM-dd');
-  const { data } = useSWR('/api/activities?month=' + date, fetcher, {
-    initialData: {},
-    revalidateOnMount: true,
-  });
+  const { data } = useSWR('/api/activities?month=' + date, fetcher);
   return (
     <Stack {...props}>
       <Stack mt="2rem">

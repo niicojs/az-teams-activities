@@ -19,19 +19,24 @@ import {
 import ky from 'ky';
 
 export default function ActivityDay({ day, month, activities }) {
+  if (!activities) activities = {};
   const [open, setOpen] = useState(false);
   const url = '/api/activities?month=' + month;
   const strday = format(day.date, 'yyyy-MM-dd');
   const onSelect = (activity) => {
     setTimeout(() => setOpen(false), 400);
-    mutate(url, () =>
-      ky.post(url, {
-        json: {
-          month,
-          day: strday,
-          activity,
-        },
-      })
+    mutate(url, { ...activities, [strday]: activity }, false);
+    mutate(
+      url,
+      ky
+        .post(url, {
+          json: {
+            month,
+            day: strday,
+            activity,
+          },
+        })
+        .json()
     );
   };
   return (
