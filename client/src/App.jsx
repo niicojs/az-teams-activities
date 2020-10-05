@@ -30,7 +30,7 @@ const App = () => {
         setError(e.toString());
       }
     })();
-  }, []);
+  }, [setAuthInfo]);
 
   return (
     <Container>
